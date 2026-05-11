@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | Productivity Expert</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:#ffffff;
+      color:#111111;
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #efefef;
+      z-index:999;
+    }
+
+    .nav-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 0;
+    }
+
+    .logo{
+      font-size:1.2rem;
+      font-weight:700;
+      letter-spacing:-0.5px;
+    }
+
+    .logo span{
+      color:#c40018;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:40px;
+    }
+
+    .nav-links a{
+      font-size:0.95rem;
+      color:#555;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#c40018;
+    }
+
+    /* CONTACT PAGE */
+
+    .contact-page{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:160px 0 100px;
+      background:#ffffff;
+    }
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:100px;
+      align-items:center;
+    }
+
+    .contact-tag{
+      display:inline-block;
+      padding:8px 18px;
+      border-radius:50px;
+      border:1px solid #ececec;
+      background:#fafafa;
+      color:#666;
+      font-size:0.85rem;
+      margin-bottom:28px;
+      letter-spacing:0.5px;
+    }
+
+    .contact-left h1{
+      font-size:5rem;
+      line-height:1.02;
+      letter-spacing:-3px;
+      margin-bottom:30px;
+      max-width:600px;
+    }
+
+    .contact-left h1 span{
+      color:#c40018;
+    }
+
+    .contact-left p{
+      color:#666;
+      font-size:1.15rem;
+      line-height:1.9;
+      max-width:580px;
+    }
+
+    .contact-right{
+      display:flex;
+      flex-direction:column;
+      gap:30px;
+    }
+
+    .contact-card{
+      padding:45px;
+      border:1px solid #efefef;
+      border-radius:32px;
+      background:#fff;
+      transition:0.3s;
+    }
+
+    .contact-card:hover{
+      transform:translateY(-5px);
+      border-color:#d8d8d8;
+      box-shadow:0 20px 60px rgba(0,0,0,0.05);
+    }
+
+    .contact-label{
+      color:#c40018;
+      font-size:0.95rem;
+      font-weight:700;
+      margin-bottom:20px;
+      letter-spacing:1px;
+    }
+
+    .contact-card h2{
+      font-size:2rem;
+      line-height:1.2;
+      letter-spacing:-1px;
+      margin-bottom:18px;
+      color:#111;
+    }
+
+    .contact-card p{
+      color:#666;
+      line-height:1.8;
+      font-size:1rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid #efefef;
+      padding:40px 0;
+      text-align:center;
+      color:#777;
+      font-size:0.95rem;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:1000px){
+
+      .contact-wrapper{
+        grid-template-columns:1fr;
+        gap:60px;
+      }
+
+      .contact-left h1{
+        font-size:3.5rem;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .contact-left h1{
+        font-size:2.6rem;
+      }
+
+      .contact-left p{
+        font-size:1rem;
+      }
+
+      .contact-card{
+        padding:35px;
+      }
+
+      .contact-card h2{
+        font-size:1.5rem;
+        word-break:break-word;
+      }
+
+    }
+	
+	.logo{
+		display:flex;
+		align-items:center;
+		gap:12px;
+		font-size:1.2rem;
+		font-weight:700;
+		letter-spacing:-0.5px;
+		text-decoration:none;
+		color:#111;
+	}
+
+	.logo img{
+		width:48px;
+		height:48px;
+		object-fit:contain;
+	}
+
+	.logo span{
+		color:#c40018;
+	}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+      <a href="index.html" class="logo">
+
+		<img src="imagineer.png" alt="Imagineering Logo">
+		<div class="logo-text">
+			Imagineering<span>Solutions</span>
+		</div>
+
+		</a>
+
+      <div class="nav-links">
+		<a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- CONTACT PAGE -->
+
+  <section class="contact-page">
+
+    <div class="container">
+
+      <div class="contact-wrapper">
+
+        <!-- LEFT -->
+
+        <div class="contact-left">
+
+          <h1>
+            Let’s Improve Your <span>CNC Productivity.</span>
+          </h1>
+
+          <p>
+            Whether you require cycle time optimization, CNC program verification,
+            technical consultation, or industrial training, we are ready to help
+            your manufacturing operation achieve higher productivity,
+            process stability, and operational performance.
+          </p>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="contact-right">
+
+          <!-- WHATSAPP -->
+
+          <a href="https://wa.me/60129150787" class="contact-card">
+
+            <div class="contact-label">
+              WHATSAPP
+            </div>
+
+            <h2>
+              +60 12-915 0787
+            </h2>
+
+            <p>
+              Fast response for consultations, technical discussions,
+              machining inquiries, and project support.
+            </p>
+
+          </a>
+
+          <!-- EMAIL -->
+
+          <a href="mailto:sales@imagineering.my" class="contact-card">
+
+            <div class="contact-label">
+              EMAIL
+            </div>
+
+            <h2>
+              sales@imagineering.my
+            </h2>
+
+            <p>
+              Send us your machining requirements, technical questions,
+              training inquiries, or consultation requests.
+            </p>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+      © 2026 Imagineering Solutions • CNC Optimization • Verification • Consultation • Training
+    </div>
+
+  </footer>
+
+</body>
+</html>`

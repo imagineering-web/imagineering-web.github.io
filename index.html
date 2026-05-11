@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Imagineering Solutions | Productivity Experts</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:#ffffff;
+      color:#111111;
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      width:100%;
+    }
+
+    .container{
+      width:90%;
+      max-width:1280px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #efefef;
+      z-index:999;
+    }
+
+    .nav-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 0;
+    }
+
+    .logo{
+      font-size:1.2rem;
+      font-weight:700;
+      letter-spacing:-0.5px;
+    }
+
+    .logo span{
+      color:#c40018;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:40px;
+    }
+
+    .nav-links a{
+      font-size:0.95rem;
+      color:#555;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#c40018;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding-top:120px;
+    }
+
+    .hero-content{
+      width:100%;
+    }
+
+    .hero h1{
+      font-size:5.5rem;
+      line-height:1;
+      letter-spacing:-4px;
+      max-width:1050px;
+      margin:0 auto 32px;
+      font-weight:700;
+    }
+
+    .hero h1 span{
+      color:#c40018;
+    }
+
+    .hero p{
+      max-width:760px;
+      margin:auto;
+      color:#666;
+      font-size:1.2rem;
+      line-height:1.8;
+    }
+
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:50px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 34px;
+      border-radius:50px;
+      font-size:0.95rem;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#c40018;
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:#9c0013;
+    }
+
+    .btn-secondary{
+      border:1px solid #ddd;
+      background:#fff;
+      color:#111;
+    }
+
+    .btn-secondary:hover{
+      border-color:#c40018;
+      color:#c40018;
+    }
+
+    /* SECTION TITLE */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:100px;
+    }
+
+    .section-title h2{
+      font-size:3.4rem;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .section-title p{
+      max-width:720px;
+      margin:auto;
+      color:#666;
+      font-size:1.1rem;
+    }
+
+    /* EXPANDED SERVICES */
+
+    .services-expanded{
+      padding:120px 0;
+    }
+
+    .service-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:90px;
+      align-items:center;
+      margin-bottom:160px;
+    }
+
+    .service-row.reverse{
+      direction:rtl;
+    }
+
+    .service-row.reverse .service-content{
+      direction:ltr;
+    }
+
+    .service-image{
+      width:100%;
+      height:650px;
+      border-radius:36px;
+      overflow:hidden;
+      background:#f4f4f4;
+      border:1px solid #ededed;
+    }
+
+    .service-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .service-content{
+      max-width:540px;
+    }
+
+    .service-number{
+      color:#c40018;
+      font-size:0.95rem;
+      font-weight:700;
+      letter-spacing:1px;
+      margin-bottom:22px;
+    }
+
+    .service-content h2{
+      font-size:3.4rem;
+      line-height:1.1;
+      letter-spacing:-2px;
+      margin-bottom:24px;
+    }
+
+    .service-highlight{
+      font-size:1.3rem;
+      color:#111;
+      margin-bottom:30px;
+      font-weight:500;
+      line-height:1.6;
+    }
+
+    .service-content p{
+      color:#666;
+      margin-bottom:24px;
+      font-size:1.05rem;
+      line-height:1.9;
+    }
+
+    /* WHY US */
+
+    .why{
+      background:#fafafa;
+      padding:140px 0;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+    }
+
+    .why-box{
+      background:#fff;
+      padding:40px;
+      border-radius:28px;
+      border:1px solid #efefef;
+    }
+
+    .why-box h3{
+      font-size:1.4rem;
+      margin-bottom:18px;
+      letter-spacing:-0.5px;
+    }
+
+    .why-box p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:160px 0;
+      text-align:center;
+    }
+
+    .cta h2{
+      font-size:4.5rem;
+      line-height:1.05;
+      letter-spacing:-3px;
+      margin-bottom:30px;
+    }
+
+    .cta p{
+      max-width:760px;
+      margin:auto auto 45px;
+      color:#666;
+      font-size:1.15rem;
+      line-height:1.9;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:40px 0;
+      border-top:1px solid #efefef;
+      text-align:center;
+      color:#777;
+      font-size:0.95rem;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:1000px){
+
+      .hero h1{
+        font-size:4rem;
+      }
+
+      .service-row{
+        grid-template-columns:1fr;
+        gap:45px;
+      }
+
+      .service-row.reverse{
+        direction:ltr;
+      }
+
+      .service-image{
+        height:420px;
+      }
+
+      .service-content{
+        max-width:100%;
+      }
+
+      .service-content h2{
+        font-size:2.6rem;
+      }
+
+      .cta h2{
+        font-size:3rem;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .section-title h2{
+        font-size:2.3rem;
+      }
+
+      .service-content h2{
+        font-size:2.1rem;
+      }
+
+      .cta h2{
+        font-size:2.4rem;
+      }
+
+      .service-image{
+        height:320px;
+      }
+
+    }
+	
+	.logo{
+		display:flex;
+		align-items:center;
+		gap:12px;
+		font-size:1.2rem;
+		font-weight:700;
+		letter-spacing:-0.5px;
+		text-decoration:none;
+		color:#111;
+	}
+
+	.logo img{
+		width:48px;
+		height:48px;
+		object-fit:contain;
+	}
+
+	.logo span{
+		color:#c40018;
+	}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-wrapper">
+
+      <a href="index.html" class="logo">
+
+		<img src="imagineer.png" alt="Imagineering Logo">
+
+		<div class="logo-text">
+			Imagineering<span>Solutions</span>
+		</div>
+
+		</a>
+
+      <div class="nav-links">
+		<a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <h1>
+        Every Second Saved <span>Creates Profit.</span>
+      </h1>
+
+      <p>
+        We help manufacturers unlock hidden productivity inside CNC machining operations through cycle time optimization, CNC program verification, technical consultation, and industrial training.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-primary">Book a Free Demo and Trial</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SECTION TITLE -->
+
+  <div class="section-title">
+    <h2>Built for High-Performance Manufacturing</h2>
+
+    <p>
+      Precision alone is no longer enough. Modern manufacturing demands speed, repeatability, process stability, and intelligent optimization.
+    </p>
+  </div>
+
+  <!-- SERVICES -->
+
+  <section class="services-expanded">
+
+    <!-- SERVICE 01 -->
+
+    <div class="container">
+
+      <div class="service-row">
+
+        <div class="service-image">
+          <img src="optimization.jpg" alt="Cycle Time Optimization">
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-number">01</div>
+
+          <h2>Cycle Time Optimization</h2>
+
+          <p class="service-highlight">
+            Every second saved scales into measurable production efficiency.
+          </p>
+
+          <p>
+            We optimize CNC machining performance by analyzing toolpaths, spindle utilization, cutting parameters, machine movement, and process bottlenecks.
+          </p>
+
+          <p>
+            Our engineering-driven methodology reduces non-productive time while maintaining machining stability, dimensional accuracy, and surface finish quality.
+          </p>
+
+          <p>
+            The result is improved throughput, reduced production cost, and significantly higher machine utilization.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- SERVICE 02 -->
+
+      <div class="service-row reverse">
+
+        <div class="service-image">
+          <img src="verification.jpg" alt="CNC Program Verification">
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-number">02</div>
+
+          <h2>CNC Program Verification</h2>
+
+          <p class="service-highlight">
+            Prevent machine crashes before they happen.
+          </p>
+
+          <p>
+            CNC program verification ensures machining processes are collision-free, stable, and production-ready before reaching the machine.
+          </p>
+
+          <p>
+            We validate machine movement, toolpaths, fixture clearances, interference risks, and machining logic to minimize operational risk.
+          </p>
+
+          <p>
+            This reduces downtime, protects equipment investment, improves operator confidence, and increases manufacturing reliability.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- SERVICE 03 -->
+
+      <div class="service-row">
+
+        <div class="service-image">
+          <img src="consultation.jpg" alt="Technical Consultation">
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-number">03</div>
+
+          <h2>Technical Consultation</h2>
+
+          <p class="service-highlight">
+            Engineering consultation focused on real production results.
+          </p>
+
+          <p>
+            We provide strategic technical consultation for CNC machining operations, productivity improvement, process optimization, and machining workflow enhancement.
+          </p>
+
+          <p>
+            Every recommendation is built from practical manufacturing experience and engineered for real-world execution.
+          </p>
+
+          <p>
+            Our objective is simple — improve operational efficiency, increase process consistency, and unlock long-term manufacturing performance.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- SERVICE 04 -->
+
+      <div class="service-row reverse">
+
+        <div class="service-image">
+          <img src="training.jpg" alt="Industrial Training">
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-number">04</div>
+
+          <h2>Industrial Training</h2>
+
+          <p class="service-highlight">
+            Build teams that machine with confidence and precision.
+          </p>
+
+          <p>
+            Our industrial training programs combine practical machining knowledge, CNC programming expertise, and productivity-focused methodologies.
+          </p>
+
+          <p>
+            Training modules can include programming strategy, process optimization, machining fundamentals, verification workflow, and manufacturing best practices.
+          </p>
+
+          <p>
+            We help manufacturers strengthen workforce capability and elevate technical standards across the organization.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+
+  <section class="why">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Why Manufacturers Work With Us</h2>
+
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-box">
+          <h3>Real Production Experience</h3>
+
+          <p>
+            We understand the realities of machining environments, tooling limitations, production targets, and operational pressure.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>Results That Matter</h3>
+
+          <p>
+            Our focus is measurable improvement — shorter cycle times, safer programs, lower downtime, and higher productivity.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>Engineering-Driven Approach</h3>
+
+          <p>
+            Every recommendation is backed by machining fundamentals, technical understanding, and practical execution.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>Premium Professional Support</h3>
+
+          <p>
+            We deliver structured, responsive, and high-value support designed for serious manufacturing operations.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Productivity Is a Competitive Advantage.
+      </h2>
+
+      <p>
+        The difference between average and world-class manufacturing is often measured in seconds, process consistency, and operational control.
+      </p>
+
+      <a href="#" class="btn btn-primary">
+        Start Your Optimization Journey
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+      © 2026 Imagineering Solutions • CNC Optimization • Verification • Consultation • Training
+    </div>
+
+  </footer>
+
+</body>
+</html>
